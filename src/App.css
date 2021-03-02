@@ -1,38 +1,51 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.anm1,
+.anm2,
+.anm3 {
+  display: inline-block;
+  overflow: hidden;
+  position: relative;
+  top: 2rem;
+  animation: 0.3s swift-up ease-in-out forwards;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.anm2 {
+  animation-delay: 0.2s;
+}
+.anm3 {
+  animation-delay: 0.3s;
+}
+.anm4,
+.anm5 {
+  top: 0.8rem;
+  opacity: 0;
+  animation: 0.5s swift-up ease-in-out forwards,
+    0.5s fade-in ease-in-out forwards;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.anm4 {
+  animation-delay: 0.8s;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.anm5 {
+  animation-delay: 1s;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
+@keyframes fade-in {
   to {
-    transform: rotate(360deg);
+    opacity: 1;
   }
+}
+
+@keyframes swift-up {
+  to {
+    top: 0rem;
+  }
+}
+
+* {
+  font-family: "Dancing Script", cursive;
 }
